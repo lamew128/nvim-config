@@ -7,7 +7,7 @@ local cancel = function(tbl, keys)
   end
 end
 
-cancel("", {"<space>"})
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -55,14 +55,14 @@ map("n", "d.", '<cmd>let @/=@"<cr>/<cr>dgn<c-r>.<esc>', opts)
 map("n", "<leader>u", function()
   require("luasnip.loaders.from_snipmate").edit_snippet_files()
 end, opts)
-cancel("n", {">>", "<<", ":", "/", "?", "Q", "qq", "<bs>", "<del>", "<cr>", "<up>", "<down>", "<left>", "<right>"})
+
 
 -- Insert
 map("i", "jk", "<esc>", opts)
 map("i", "qw", "<esc>:w<cr>", opts)
 map("i", "<c-l>", "<c-x><c-l>", opts)
 map("i", "<c-n>", "<Cmd>lua require('cmp').complete()<CR>", opts)
-cancel("i", {"<esc>", "<del>", "<cr>", "<up>", "<down>", "<left>", "<right>"})
+
 
 -- Visual
 map("x", "<c-j>", "<gv", opts)
@@ -73,12 +73,10 @@ map("x", "s", send.send_highlighted_lines, opts)
 map("x", "sf", "<Plug>(comment_toggle_linewise_visual)", opts)
 map("x", "SF", "<Plug>(comment_toggle_blockwise_visual)", opts)
 map("x", "<c-f>", "<cmd>Telescope grep_string<cr>", opts)
-cancel("x", {">", "<", "<esc>", ":"})
+
 
 -- Command
 map("c", "jk", "<c-c>", opts)
 map("c", "%%", "<c-r>=expand('%:h').'/'<cr>", opts) -- expand current path
 map("c", "%$", "<c-r>=expand('%').'/'<cr>", opts) -- expand current path
-cancel("c", {"<esc>", "<del>"})
-
 vim.cmd "source ~/.config/nvim/lua/keymap.vim"

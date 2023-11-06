@@ -32,7 +32,7 @@ au BufNewFile,BufRead *.uplugin set ft=json
 au FileType python noremap <silent> <m-r> :w ! python<cr>
 au FileType sh noremap <silent> <m-r> :w ! sh<cr>
 au! BufNewFile,BufRead *.ln set filetype=lokinote
-au! FileType lokinote so ~/loki/env/vim/lokinote.vim
+au! FileType lokinote so ~/appcara-07/env/vim/lokinote.vim
 
 au VimEnter * call LoadProjectVimRC()
 function! LoadProjectVimRC()

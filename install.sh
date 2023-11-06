@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-if nvim --version | head -n1 | grep -vq 0.10; then
-  echo "expected nvim 0.10, aborting..."
-  exit 1
-fi
+
+
 
 if pip3 list | grep pynvim | grep -vq pynvim; then
   echo "expected pynvim, aborting..."
